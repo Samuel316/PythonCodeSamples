@@ -11,6 +11,9 @@ df.pivot_table(...).reorder_levels([{New Column List}], axis=1).sort_index(axis=
 
 df.div(df.sum(axis=1), axis=0).multiply(100)
 
+# Create multiindex
+df.columns = pd.MultiIndex.from_tuples([("A", "1"), ("A", "2"), ("B", "1")])
+
 # --- Datetime ---
 # Get Week Number
 df["Datetime"].dt.isocalendar().week
