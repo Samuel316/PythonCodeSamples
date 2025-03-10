@@ -24,6 +24,9 @@ df[df["Datetime"] >= pd.to_datetime("today") - pd.DateOffset(months=1)]
 # Get day of year
 df["Datetime"].dt.day_of_year
 
+# Count acorances
+df.value_counts()
+
 # String Methods
 df["String"].str.contains(regex=True, pat=r"\d+")
 
