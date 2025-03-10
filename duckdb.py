@@ -1,4 +1,8 @@
-# MYSQL
+"https://duckdb.org/docs/stable/"
+
+"https://duckdb.org/docs/stable/clients/python/overview.html"
+
+# MYSQL "https://duckdb.org/docs/stable/extensions/mysql.html"
 duckdb.sql("INSTALL mysql; LOAD mysql;")
 duckdb.sql(f"ATTACH '{connection_string}' AS DatabaseName (TYPE MYSQL);")
 
