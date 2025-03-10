@@ -42,5 +42,9 @@ df.groupby("Group").agg({"index": "count", "Value": "min"})
 
 df.groupby("Group").agg(Count=("Index", "size"), ConcatString=("String", lambda x: ",".join(x)))
 
+# Get row with min/max value in particular column
+df.loc[df.groupby("LabelColumn")["ValueColumn"].idxmin()]
+df.sort_values(by="ValueColumn").groupby("LabelColumn", as_index=False).first()
+
 # Background Gradient
 df..style.background_gradient()
