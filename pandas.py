@@ -27,8 +27,18 @@ df["Datetime"].dt.day_of_year
 # Count acorances
 df.value_counts()
 
-# String Methods
+# --- String Methods ---
+# Get parts of the string that are digits
 df["String"].str.contains(regex=True, pat=r"\d+")
+df["String"].str.extract(r"(?P<letter>[ab])(?P<digit>\d)", expand=False)
+
+# Split and return multiple columns, while limmiting number of splits
+df["String"].str.split("_", expand=True, n=1)
+df["String"].str.rsplit("_", expand=True, n=1)
+
+
+# Remove part of string
+df["String"].str.removeprefix("prefix")
 
 # Filter
 df.filter(like="String Part")
