@@ -18,6 +18,18 @@ df.columns = pd.MultiIndex.from_tuples([("A", "1"), ("A", "2"), ("B", "1")])
 df.idxmin(axis=0)
 df.idxmax(axis=1)
 
+# --- Apply function ---
+df.pipe() # df
+
+df.apply() # column/row
+df.apply(function, args=("A","B"), parameter="C")
+
+df.agg() # Functions over axis
+
+df.map() # Elements
+
+# ----------------------
+
 # Discreate data from continous
 pd.cut(series, bins)
 pd.qcut(series, quartiles)
