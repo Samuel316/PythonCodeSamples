@@ -25,6 +25,7 @@ df.apply() # column/row
 df.apply(function, args=("A","B"), parameter="C")
 
 df.agg() # Functions over axis
+df.agg(["mean", "std"])
 
 df.map() # Elements
 
