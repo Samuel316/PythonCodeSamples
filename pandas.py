@@ -14,6 +14,10 @@ df.div(df.sum(axis=1), axis=0).multiply(100)
 # Create multiindex
 df.columns = pd.MultiIndex.from_tuples([("A", "1"), ("A", "2"), ("B", "1")])
 
+# Id of min/max for index/columns
+df.idxmin(axis=0)
+df.idxmax(axis=1)
+
 # --- Datetime ---
 # Get Week Number
 df["Datetime"].dt.isocalendar().week
@@ -23,6 +27,7 @@ df[df["Datetime"] >= pd.to_datetime("today") - pd.DateOffset(months=1)]
 
 # Get day of year
 df["Datetime"].dt.day_of_year
+# ---------------
 
 # Count acorances
 df.value_counts()
@@ -36,9 +41,9 @@ df["String"].str.extract(r"(?P<letter>[ab])(?P<digit>\d)", expand=False)
 df["String"].str.split("_", expand=True, n=1)
 df["String"].str.rsplit("_", expand=True, n=1)
 
-
 # Remove part of string
 df["String"].str.removeprefix("prefix")
+# ---------------------
 
 # Filter
 df.filter(like="String Part")
