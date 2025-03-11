@@ -18,6 +18,10 @@ df.columns = pd.MultiIndex.from_tuples([("A", "1"), ("A", "2"), ("B", "1")])
 df.idxmin(axis=0)
 df.idxmax(axis=1)
 
+# Discreate data from continous
+pd.cut(series, bins)
+pd.qcut(series, quartiles)
+
 # --- Datetime ---
 # Get Week Number
 df["Datetime"].dt.isocalendar().week
