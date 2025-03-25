@@ -1,3 +1,9 @@
+pd.set_option("mode.copy_on_write", True)
+
+# Set display options
+with pd.option_context("display.max_rows", None):
+    display(df)
+
 # Convert all strings in a DataFrame to UpperCase
 
 df[df_bbti_orders.select_dtypes(include="object").columns] = (
